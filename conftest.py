@@ -8,7 +8,7 @@ from scooter_api import CourierRequests
 
 
 @pytest.fixture
-@allure.step('Запрос для отправки заказа')
+@allure.step('Данные для заказа')
 def create_data_order():
     faker = Faker()
     payload = {
@@ -39,7 +39,7 @@ def create_user_data():
 
 
 @pytest.fixture
-@allure.step('Создание курьера, логин и удаление курьера')
+@allure.step('Создание курьера, логин и удаление')
 def create_courier_login_and_delete(create_user_payload):
     payload = create_user_payload
     response = CourierRequests.create_courier_post(payload)

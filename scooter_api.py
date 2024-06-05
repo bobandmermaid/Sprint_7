@@ -77,8 +77,8 @@ class CourierRequests(BaseRequests):
     @staticmethod
     def create_login_data(login, password):
         data = {
-            "login": login,
-            "password": password
+            'login': login,
+            'password': password
         }
 
         return json.dumps(data)

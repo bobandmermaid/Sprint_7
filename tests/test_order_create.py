@@ -9,6 +9,7 @@ class TestOrderCreate:
     @allure.title('Создание заказа с различным выбором цвета самоката')
     @pytest.mark.parametrize('color', [
         ['BLACK'],
+        ['GREY'],
         ['BLACK', 'GREY'],
         ''])
     def test_create_order(self, color, create_data_order):
