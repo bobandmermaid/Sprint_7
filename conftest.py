@@ -40,10 +40,10 @@ def create_user_data():
 
 @pytest.fixture
 @allure.step('Создание курьера, логин и удаление')
-def create_courier_login_and_delete(create_user_payload):
-    payload = create_user_payload
-    response = CourierRequests.create_courier_post(payload)
-    login_response = CourierRequests.login_courier_post(payload)
-    CourierRequests.delete_courier(courier_id=login_response["id"])
-
-    return login_response
+def create_courier_login_and_delete(create_user_data):
+    courier_requests = CourierRequests()
+    payload = courier_requests.create_courier_post(create_user_data)
+    response = payload
+    yield response
+    courier_id = response["id"]
+    CourierRequests.delete_courier(courier_id=courier_id)
