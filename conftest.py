@@ -42,8 +42,9 @@ def create_user_data():
 @allure.step('Создание курьера, логин и удаление')
 def create_courier_login_and_delete(create_user_data):
     courier_requests = CourierRequests()
-    payload = courier_requests.create_courier_post(create_user_data)
-    response = payload
-    yield response
-    courier_id = response["id"]
+    payload = create_user_data
+    courier_requests.create_courier_post(payload)
+    login_response = courier_requests.login_courier_post(payload)
+    yield login_response
+    courier_id = login_response["id"]
     CourierRequests.delete_courier(courier_id=courier_id)
