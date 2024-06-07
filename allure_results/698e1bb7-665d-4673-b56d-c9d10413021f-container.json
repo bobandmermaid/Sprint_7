@@ -1,0 +1,1 @@
+{"uuid": "f214dc89-4232-49e3-a1df-8a4e0b6dd9af", "children": ["b4c1dcd7-5fc9-4dee-a818-10bc8a422716"], "befores": [{"name": "create_user_data", "status": "passed", "steps": [{"name": "Создание данных курьера", "status": "passed", "start": 1717786377885, "stop": 1717786377900}], "start": 1717786377885, "stop": 1717786377900}], "start": 1717786377885, "stop": 1717786378097}

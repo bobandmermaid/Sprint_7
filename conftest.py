@@ -47,4 +47,4 @@ def create_courier_login_and_delete(create_user_data):
     login_response = courier_requests.login_courier_post(payload)
     yield login_response
     courier_id = login_response["id"]
-    CourierRequests.delete_courier(courier_id=courier_id)
+    courier_requests.delete_courier(courier_id=courier_id)
